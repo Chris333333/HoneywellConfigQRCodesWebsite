@@ -4,8 +4,8 @@ import { PlaceholderComponent } from './layout/placeholder/placeholder.component
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
-    {path: 'placeholder', component: PlaceholderComponent},
-    { path: '**', redirectTo: 'placeholder' },
-    {path: '', redirectTo: 'placeholder', pathMatch: 'full'}
+    {path: 'torun', component: PlaceholderComponent},
+    { path: '**', redirectTo: 'torun' },
+    {path: '', redirectTo: 'torun', pathMatch: 'full'}
     
 ];

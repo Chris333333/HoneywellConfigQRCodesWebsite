@@ -1,1 +1,22 @@
-<p>placeholder works!</p>
+<h2 class="qr-codes-title">Skanowanie kodów od lewa do prawa</h2>
+
+<div class="qr-codes-container">
+  <div class="qr-code-item">
+    <img src="http://localhost:80/photos/honeywell-qr-codes/barcode1.png" alt="QR Code 1" />
+    <p>Pierwszy kod</p>
+  </div>
+  <div class="qr-code-item">
+    <img src="http://localhost:80/photos/honeywell-qr-codes/barcode2.png" alt="QR Code 2" />
+    <p>Drugi kod</p>
+  </div>
+  <div class="qr-code-item">
+    <img src="http://localhost:80/photos/honeywell-qr-codes/barcode3.png" alt="QR Code 3" />
+    <p>Trzeci kod</p>
+  </div>
+  <div class="qr-code-item">
+    <img src="http://localhost:80/photos/honeywell-qr-codes/barcode4.png" alt="QR Code 4" />
+    <p>Czwarty kod</p>
+  </div>
+</div>
+
+<button class="export-btn" (click)="exportQRCodesToPDF()">Eksportuj kody QR do PDF</button>

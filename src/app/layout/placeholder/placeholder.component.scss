@@ -1,0 +1,70 @@
+.qr-codes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  min-height: 60vh;
+}
+
+.qr-code-item {
+  flex: 1 1 340px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1rem;
+}
+
+.qr-code-item img {
+  width: 100%;
+  height: auto;
+  max-width: 340px;
+  min-width: 180px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.qr-code-item p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.qr-codes-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 2.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.export-btn {
+  display: block;
+  margin: 0 auto 2rem auto;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #d32f2f 0%, #f57c00 100%);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.export-btn:hover, .export-btn:focus {
+  background: linear-gradient(90deg, #b71c1c 0%, #ef6c00 100%);
+  transform: translateY(-2px) scale(1.03);
+  outline: none;
+}
