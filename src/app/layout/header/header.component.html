@@ -5,21 +5,21 @@
       alt="app logo"
       class="max-h-12 transition-transform duration-700 ease-in-out hover:scale-105 animate-slide-in-left"
     />
-    <span class="text-2xl font-bold text-blue-400 my-2 animate-slide-in-down">Kody konfiguracyjne</span>
+    <span class="text-2xl font-bold text-blue-400 my-2 animate-slide-in-down">{{ 'APP_TITLE' | translate }}</span>
     <div class="flex gap-3 items-center animate-slide-in-right">
       @if (fullName) {
         <span class="text-blue-400 font-bold px-5 py-2">{{ fullName }}</span>
         <button (click)="logout.emit()"
           class="ml-2 text-center text-blue-400 px-5 py-2 rounded border font-bold border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-glow transition-all duration-300"
         >
-          LOGOUT
+          {{ 'LOGIN.LOGOUT' | translate }}
         </button>
       } @else {
         <button 
           routerLink="/login"
           class="text-center text-blue-400 px-5 py-2 rounded border font-bold border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-glow transition-all duration-300"
         >
-          LOGIN
+          {{ 'LOGIN.LOGIN' | translate }}
         </button>
       }
     </div>
@@ -27,6 +27,12 @@
 </header>
 <header class="bg-blue-400 p-1 w-full animate-fade-in">
   <div class="flex items-center justify-between max-w-screen-2xl mx-auto">
+    <div class="flex items-center gap-4">
+      <div>
+        <button (click)="changeLang('pl')" [class.font-bold]="currentLang === 'pl'" class="text-white px-2 py-1 rounded-l border border-white border-r-0 hover:bg-white hover:text-blue-400 transition-all duration-200">PL</button>
+        <button (click)="changeLang('en')" [class.font-bold]="currentLang === 'en'" class="text-white px-2 py-1 rounded-r border border-white hover:bg-white hover:text-blue-400 transition-all duration-200">EN</button>
+      </div>
+    </div>
     <nav class="flex gap-6 my-2 uppercase text-lg font-semibold text-white animate-slide-in-down">
       <a
         routerLink="/placeholder"

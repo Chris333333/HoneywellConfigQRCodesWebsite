@@ -1,0 +1,11 @@
+{
+  "APP_TITLE": "Kody konfiguracyjne QR",
+  "LOGIN": {
+    "TITLE": "Zaloguj się",
+    "LOGIN": "Login",
+    "LOGOUT": "Wyloguj",
+    "PASSWORD": "Hasło",
+    "SUBMIT": "Zaloguj się",
+    "ERROR": "Błąd logowania. Sprawdź dane."
+  }
+}

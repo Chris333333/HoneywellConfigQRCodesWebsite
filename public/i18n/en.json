@@ -1,0 +1,11 @@
+{
+  "APP_TITLE": "QR configuration codes",
+  "LOGIN": {
+    "TITLE": "Log In",
+    "LOGIN": "Login",
+    "LOGOUT": "Log Out",
+    "PASSWORD": "Password",
+    "SUBMIT": "Log In",
+    "ERROR": "Login failed. Please check your credentials."
+  }
+}
