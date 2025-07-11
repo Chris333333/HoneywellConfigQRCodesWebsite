@@ -2,14 +2,23 @@ import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-placeholder',
-  imports: [TranslateModule],
+  imports: [TranslateModule, CommonModule],
   templateUrl: './placeholder.component.html',
   styleUrl: './placeholder.component.scss'
 })
 export class PlaceholderComponent {
+  
+  constructor(private authService: AuthService) {}
+
+  get isLoggedIn(): boolean {
+    return this.authService.isAuthenticated();
+  }
+  
   async exportQRCodesToPDF() {
     const pdf = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' });
     const pageWidth = pdf.internal.pageSize.getWidth();
