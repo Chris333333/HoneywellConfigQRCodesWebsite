@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "honeywell-qr-config-webiste": {
+    "honeywell-qr-config-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/honeywell-qr-config-webiste",
+            "outputPath": "dist/honeywell-qr-config-website",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "honeywell-qr-config-webiste:build:production"
+              "buildTarget": "honeywell-qr-config-website:build:production"
             },
             "development": {
-              "buildTarget": "honeywell-qr-config-webiste:build:development"
+              "buildTarget": "honeywell-qr-config-website:build:development"
             }
           },
           "defaultConfiguration": "development"

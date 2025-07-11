@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'honeywell-qr-config-webiste';
+  title = 'honeywell-qr-config-website';
   isLoggedIn = false;
   userFullName = '';
   isAndroidRoute = false;
