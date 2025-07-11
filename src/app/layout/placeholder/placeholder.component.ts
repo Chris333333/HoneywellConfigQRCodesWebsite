@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-placeholder',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './placeholder.component.html',
   styleUrl: './placeholder.component.scss'
 })

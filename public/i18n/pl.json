@@ -7,5 +7,13 @@
     "PASSWORD": "Hasło",
     "SUBMIT": "Zaloguj się",
     "ERROR": "Błąd logowania. Sprawdź dane."
+  },
+  "QR_CODES": {
+    "SCAN_TITLE": "Skanowanie kodów od lewa do prawa",
+    "FIRST": "Pierwszy kod",
+    "SECOND": "Drugi kod",
+    "THIRD": "Trzeci kod",
+    "FOURTH": "Czwarty kod",
+    "EXPORT_BTN": "Eksportuj kody QR do PDF"
   }
 }

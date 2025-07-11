@@ -9,3 +9,7 @@ export function getSession(name: string): string | null {
 export function deleteSession(name: string) {
   sessionStorage.removeItem(name);
 }
+
+export function clearSession() {
+  sessionStorage.clear();
+}

@@ -7,5 +7,13 @@
     "PASSWORD": "Password",
     "SUBMIT": "Log In",
     "ERROR": "Login failed. Please check your credentials."
+  },
+  "QR_CODES": {
+    "SCAN_TITLE": "Scan codes from left to right",
+    "FIRST": "First code",
+    "SECOND": "Second code",
+    "THIRD": "Third code",
+    "FOURTH": "Fourth code",
+    "EXPORT_BTN": "Export QR codes to PDF"
   }
 }

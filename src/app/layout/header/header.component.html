@@ -5,21 +5,22 @@
       alt="app logo"
       class="max-h-12 transition-transform duration-700 ease-in-out hover:scale-105 animate-slide-in-left"
     />
-    <div class="flex gap-3 items-center animate-slide-in-right">
+    <div class="flex gap-3 items-center animate-slide-in-right" style="position: relative; z-index: 10;">
       @if (fullName) {
         <span class="text-blue-400 font-bold px-5 py-2">{{ fullName }}</span>
-        <button (click)="logout.emit()"
+        <button (click)="onLogout()"
           class="ml-2 text-center text-blue-400 px-5 py-2 rounded border font-bold border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-glow transition-all duration-300"
         >
           {{ 'LOGIN.LOGOUT' | translate }}
         </button>
       } @else {
-        <button 
-          routerLink="/login"
-          class="text-center text-blue-400 px-5 py-2 rounded border font-bold border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-glow transition-all duration-300"
-        >
-          {{ 'LOGIN.LOGIN' | translate }}
+        <button type="button" (click)="showLoginDropdown = !showLoginDropdown"
+          class="text-center text-blue-400 px-5 py-2 rounded border font-bold border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-glow transition-all duration-300 relative">
+          {{ 'LOGIN.TITLE' | translate }}
         </button>
+        <div *ngIf="showLoginDropdown" class="absolute right-0 mt-2 bg-white border border-blue-400 rounded shadow-lg z-50 p-4 min-w-[260px]" style="top:100%;">
+          <app-login (loginSuccess)="onLoginSuccess($event)"></app-login>
+        </div>
       }
     </div>
   </div>

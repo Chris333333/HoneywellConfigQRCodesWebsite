@@ -1,0 +1,8 @@
+<form (ngSubmit)="onSubmit()" class="flex flex-col gap-2">
+      <input type="text" [(ngModel)]="login" name="login" placeholder="Login" required class="px-2 py-2 border border-blue-400 rounded text-blue-400 font-bold focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200" />
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Password" required class="px-2 py-2 border border-blue-400 rounded text-blue-400 font-bold focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200" />
+      <button type="submit" [disabled]="loading" class="text-center text-blue-400 px-5 py-2 rounded border font-bold border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-glow transition-all duration-300">
+        Log in
+      </button>
+      <div *ngIf="error" class="error mt-2">Login failed. Please check your credentials.</div>
+</form>
