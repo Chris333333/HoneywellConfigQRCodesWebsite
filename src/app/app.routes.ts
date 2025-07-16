@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { PlaceholderComponent } from './layout/placeholder/placeholder.component';
+import { WelcomeComponent } from './layout/welcome/welcome.component';
+import { QrCodesComponent } from './layout/qr-codes/qr-codes.component';
 
 export const routes: Routes = [
-    {path: 'torun', component: PlaceholderComponent},
-    { path: '**', redirectTo: 'torun' },
-    {path: '', redirectTo: 'torun', pathMatch: 'full'}
+    { path: 'location/:localID', component: QrCodesComponent },
+    {path: '', component: WelcomeComponent},
     
 ];

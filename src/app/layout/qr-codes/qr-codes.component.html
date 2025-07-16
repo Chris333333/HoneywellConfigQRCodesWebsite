@@ -1,0 +1,29 @@
+<ng-container *ngIf="!notFound; else notFoundTpl">
+  <h2 class="qr-codes-title"></h2>
+
+<div class="qr-codes-container">
+  <div class="qr-code-item" *ngFor="let qr of qrCodes; let i = index">
+    
+    <img [src]="'http://localhost:5000/api/HoneyWellQRImage/GetImage/' + qr.id" [alt]="'QR Code ' + qr.id" />
+    <span 
+      style="font-size: 2rem; color: #2563eb; font-weight: bold; margin-right: 12px;"
+    >
+      {{ i + 1 }}
+    </span>
+    <button *ngIf="isLoggedIn" class="export-btn">Edit QR code</button>
+  </div>
+</div>
+
+<button *ngIf="isLoggedIn" class="export-btn" (click)="exportQRCodesToPDF()">
+  {{ 'QR_CODES.EXPORT_BTN' | translate }}
+</button>
+</ng-container>
+
+<ng-template #notFoundTpl>
+  <!-- You can also use <app-not-found></app-not-found> if you have the component -->
+  <div class="flex flex-col items-center justify-center min-h-[60vh] text-center">
+    <h1 class="text-5xl font-bold text-blue-400 mb-4">404</h1>
+    <h2 class="text-2xl font-semibold mb-2">Page Not Found</h2>
+    <p class="mb-6 text-gray-600">Sorry, the page you are looking for does not exist.</p>
+  </div>
+</ng-template>

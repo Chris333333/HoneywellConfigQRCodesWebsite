@@ -5,22 +5,33 @@
       alt="app logo"
       class="max-h-12 transition-transform duration-700 ease-in-out hover:scale-105 animate-slide-in-left"
     />
-    <div class="flex gap-3 items-center animate-slide-in-right" style="position: relative; z-index: 10;">
+    <div
+      class="flex gap-3 items-center animate-slide-in-right"
+      style="position: relative; z-index: 10"
+    >
       @if (fullName) {
-        <span class="text-blue-400 font-bold px-5 py-2">{{ fullName }}</span>
-        <button (click)="onLogout()"
-          class="ml-2 text-center text-blue-400 px-5 py-2 rounded border font-bold border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-glow transition-all duration-300"
-        >
-          {{ 'LOGIN.LOGOUT' | translate }}
-        </button>
+      <span class="text-blue-400 font-bold px-5 py-2">{{ fullName }}</span>
+      <button
+        (click)="onLogout()"
+        class="ml-2 text-center text-blue-400 px-5 py-2 rounded border font-bold border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-glow transition-all duration-300"
+      >
+        {{ "LOGIN.LOGOUT" | translate }}
+      </button>
       } @else {
-        <button type="button" (click)="showLoginDropdown = !showLoginDropdown"
-          class="text-center text-blue-400 px-5 py-2 rounded border font-bold border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-glow transition-all duration-300 relative">
-          {{ 'LOGIN.TITLE' | translate }}
-        </button>
-        <div *ngIf="showLoginDropdown" class="absolute right-0 mt-2 bg-white border border-blue-400 rounded shadow-lg z-50 p-4 min-w-[260px]" style="top:100%;">
-          <app-login (loginSuccess)="onLoginSuccess($event)"></app-login>
-        </div>
+      <button
+        type="button"
+        (click)="showLoginDropdown = !showLoginDropdown"
+        class="text-center text-blue-400 px-5 py-2 rounded border font-bold border-blue-400 hover:bg-blue-400 hover:text-white hover:shadow-blue-glow transition-all duration-300 relative"
+      >
+        {{ "LOGIN.TITLE" | translate }}
+      </button>
+      <div
+        *ngIf="showLoginDropdown"
+        class="absolute right-0 mt-2 bg-white border border-blue-400 rounded shadow-lg z-50 p-4 min-w-[260px]"
+        style="top: 100%"
+      >
+        <app-login (loginSuccess)="onLoginSuccess($event)"></app-login>
+      </div>
       }
     </div>
   </div>
@@ -29,17 +40,33 @@
   <div class="flex items-center justify-between max-w-screen-2xl mx-auto">
     <div class="flex items-center gap-4">
       <div>
-        <button (click)="changeLang('pl')" [class.font-bold]="currentLang === 'pl'" class="text-white px-2 py-1 rounded-l border border-white border-r-0 hover:bg-white hover:text-blue-400 transition-all duration-200">PL</button>
-        <button (click)="changeLang('en')" [class.font-bold]="currentLang === 'en'" class="text-white px-2 py-1 rounded-r border border-white hover:bg-white hover:text-blue-400 transition-all duration-200">EN</button>
+        <button
+          (click)="changeLang('pl')"
+          [class.font-bold]="currentLang === 'pl'"
+          class="text-white px-2 py-1 rounded-l border border-white border-r-0 hover:bg-white hover:text-blue-400 transition-all duration-200"
+        >
+          PL
+        </button>
+        <button
+          (click)="changeLang('en')"
+          [class.font-bold]="currentLang === 'en'"
+          class="text-white px-2 py-1 rounded-r border border-white hover:bg-white hover:text-blue-400 transition-all duration-200"
+        >
+          EN
+        </button>
       </div>
     </div>
-    <nav class="flex gap-6 my-2 uppercase text-lg font-semibold text-white animate-slide-in-down">
+    <nav
+      class="flex gap-6 my-2 uppercase text-lg font-semibold text-white animate-slide-in-down"
+    >
       <a
-        routerLink="/torun"
-        routerLinkActive="text-yellow-300 border-yellow-300"
+        *ngFor="let loc of locations"
+        [routerLink]="['/location', loc.id]"
+        routerLinkActive="text-yellow-300 border-b-2 border-yellow-300"
         class="text-white transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-0"
-        >Toruń</a
       >
+        {{ loc.locationName }}
+      </a>
     </nav>
   </div>
 </header>
